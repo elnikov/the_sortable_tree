@@ -12,6 +12,9 @@ module TheSortableTree
         elsif Rails::VERSION::MAJOR >= 4
           scope :nested_set,          lambda { order('lft ASC')  }
           scope :reversed_nested_set, lambda { order('lft DESC') }
+        elsif Rails::VERSION::MAJOR >= 6
+          scope :nested_set,          lambda { order('lft ASC')  }
+          scope :reversed_nested_set, lambda { order('lft DESC') }
         else
           puts "[TheSortableTree] ERROR: required Rails >= version 3"
         end
